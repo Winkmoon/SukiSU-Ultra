@@ -222,7 +222,7 @@ static void sulog_schedule_task_work(void)
 
     cb->func = sulog_task_work_handler;
 
-    ret = task_work_add(tsk, cb, TWA_RESUME);
+    ret = task_work_add(tsk, cb, true);
     if (ret) {
         pr_err("sulog: failed to queue task work: %d\n", ret);
         kfree(cb);
