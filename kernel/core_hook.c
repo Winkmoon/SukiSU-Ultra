@@ -23,6 +23,7 @@
 #include <linux/uaccess.h>
 #include <linux/uidgid.h>
 #include <linux/version.h>
+#include <linux/binfmts.h>
 #ifndef KSU_HAS_PATH_UMOUNT
 #include <linux/syscalls.h> // sys_umount (<4.17) & ksys_umount (4.17+)
 #endif
