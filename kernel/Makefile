@@ -34,7 +34,7 @@ obj-$(CONFIG_KPM) += kpm/
 REPO_OWNER := SukiSU-Ultra
 REPO_NAME := SukiSU-Ultra
 REPO_BRANCH := main
-KSU_VERSION_API := 4.0.0
+KSU_VERSION_API := 4.2.0-Xinran
 
 GIT_BIN := /usr/bin/env PATH="$$PATH":/usr/bin:/usr/local/bin git
 CURL_BIN := /usr/bin/env PATH="$$PATH":/usr/bin:/usr/local/bin curl
@@ -65,7 +65,7 @@ ifeq ($(KSU_GITHUB_VERSION_COMMIT),)
     $(warning -- Could not fetch version online or via local .git! Using fallback version: $(KSU_VERSION))
   endif
 else
-  KSU_VERSION := $(shell expr 40000 + $(KSU_GITHUB_VERSION_COMMIT) - 2815)
+  KSU_VERSION := $(shell expr 42000 + $(KSU_GITHUB_VERSION_COMMIT) - 2815)
   $(info -- $(REPO_NAME) version (GitHub): $(KSU_VERSION))
 endif
 
@@ -150,6 +150,7 @@ $(info -- SukiSU Manager package name: $(KSU_MANAGER_PACKAGE))
 endif
 
 $(info -- Supported Unofficial Manager: 5ec1cff (GKI) ShirkNeko udochina (GKI and KPM))
+$(info -- Unofficial Manager: by Xinran)
 # Kernel version check
 KERNEL_VERSION := $(VERSION).$(PATCHLEVEL)
 KERNEL_TYPE := Non-GKI
@@ -166,6 +167,8 @@ $(info -- KERNEL_VERSION: $(KERNEL_VERSION))
 $(info -- KERNEL_TYPE: $(KERNEL_TYPE))
 
 $(info -- KERNEL_VERSION: $(KERNEL_VERSION))
+$(info -- by XInran_StarBai-非gki特殊适配版)
+$(info -- 如您内核是5.4以上，请不要使用此分支版本！！)
 ifeq ($(CONFIG_KPM), y)
 $(info -- KPM is enabled)
 else
