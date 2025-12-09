@@ -15,6 +15,7 @@
 #include "ksu.h"
 #include "throne_tracker.h"
 
+struct cred* ksu_cred;
 static struct workqueue_struct *ksu_workqueue;
 
 bool ksu_queue_work(struct work_struct *work)
