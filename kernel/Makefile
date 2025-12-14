@@ -35,7 +35,7 @@ obj-$(CONFIG_KPM) += kpm/
 REPO_OWNER := SukiSU-Ultra
 REPO_NAME := SukiSU-Ultra
 REPO_BRANCH := main
-KSU_VERSION_API := 4.2.0-Xinran
+KSU_VERSION_API := 4.1.0
 
 GIT_BIN := /usr/bin/env PATH="$$PATH":/usr/bin:/usr/local/bin git
 CURL_BIN := /usr/bin/env PATH="$$PATH":/usr/bin:/usr/local/bin curl
@@ -66,7 +66,7 @@ ifeq ($(KSU_GITHUB_VERSION_COMMIT),)
     $(warning -- Could not fetch version online or via local .git! Using fallback version: $(KSU_VERSION))
   endif
 else
-  KSU_VERSION := $(shell expr 42000 + $(KSU_GITHUB_VERSION_COMMIT) - 2815)
+  KSU_VERSION := $(shell expr 41000 + $(KSU_GITHUB_VERSION_COMMIT) - 2815)
   $(info -- $(REPO_NAME) version (GitHub): $(KSU_VERSION))
 endif
 
